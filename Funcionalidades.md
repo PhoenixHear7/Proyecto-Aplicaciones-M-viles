@@ -23,24 +23,22 @@ de una interfaz amigable. El usuario podrá:
 2. Paso a Paso: Cada receta debe presentarse con una guía paso a paso clara y fácil de seguir,
    acompañada de fotografías ilustrativas y podría incluir algún video.
 
-3. Historial y Favoritos: Los usuarios deben tener la capacidad de acceder a un historial de 
-   recetas que han visto o cocinado previamente. También deberían poder guardar recetas favoritas 
-   en una sección designada.
+3. Historial y Favoritos: Los usuarios podran acceder a un historial de recetas que han visto o cocinado
+   anteriormente. También deberían poder guardar recetas a su lista de favoritos en una sección designada.
    
-5. Reproducir episodios de podcast: Desde la lista de episodios podrá reproducir cualquiera de
-   ellos.
+4. Compartir Recetas: Los usuarios deben tener la opción de compartir sus recetas y fotografías con otros 
+   usuarios de la aplicación. 
 
-6. Adelantar la reproducción de un podcast: Podrá adelantar la reproducción en intervalos de 15
-   segundos.
+5. Crea tu propio perfil: Los usuarios podrían tener perfiles públicos donde puedan seguir a otros usuarios, 
+   comentar y dar me gusta a recetas. Tambien podran participar en discusiones relacionadas con la cocina.
 
-7. Retrasar la reproducción de un podcast: Podrá regresar la reproducción en intervalos de 15
-   segundos.
+6. Notificaciones Personalizadas: La aplicación puede enviar notificaciones personalizadas sobre nuevas 
+   recetas, actualizaciones de favoritos o interacciones de otros usuarios, mientras el usuario quiera
 
-8. Buscar podcasts por nombre: Al ir a la ventana de búsqueda podrá navegar buscando el nombre de su
-   podcast de interés.
+7. Atención al cliente y Soporte: Los usuarios podran proporcionar comentarios sobre las recetas y la 
+   funcionalidad de la aplicación, podran reportar a otros usuarios que esten teniendo comportamientos
+   negativos, así como para solicitar ayuda y soporte técnico cuando sea necesario.
 
-9. Votar por los podcasts favoritos: En cada Podcast tendrá una opción para votar por el podcast. La
-   votación será personal y estará disponible solo desde el dispositivo.
 
-10. Ver los podcasts favoritos: Podrá ir a la ventana de favoritos donde verá los Podcasts que ha
-   votado como favoritos en orden de calificación.
+
+
