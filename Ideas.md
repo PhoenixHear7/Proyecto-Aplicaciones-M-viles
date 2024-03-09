@@ -23,7 +23,7 @@ Sería una aplicación que permita a los usuarios realizar un seguimiento de su 
 - [Runkeeper](https://runkeeper.com/cms/)
 
 
-  # Idea N° 3: StepVyStep
+  # Idea N° 3: StepVyStep (SELECCIONADA)
 
 Esta sería una aplicación diseñada para facilitar la vida de todas las personas sin importar edad o habilidad a la hora de cocinar. En esta aplicación, el usuario podrá encontrar variedades infinitas de recetas. Podrán buscar recetas por medio de filtros. Cada receta tendrá una guía paso a paso acompañada de fotografías. Tendrá funciones de historial y podrá agregar recetas a su sección de favoritos. El usuario podrá compartir sus recetas y fotografías con los demás usuarios. 
 
