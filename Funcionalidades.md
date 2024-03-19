@@ -14,7 +14,7 @@
 
 ## Funcionalidades de usuario
 
-UANCasts le permitirá al usuario consultar e interactuar con Podcasts de distintos tópicos a través
+StepByStep le permitirá al usuario consultar e interactuar con Podcasts de distintos tópicos a través
 de una interfaz amigable. El usuario podrá:
 
 1. Búsqueda Avanzada: Los usuarios podrán buscar recetas utilizando filtros como ingredientes,
