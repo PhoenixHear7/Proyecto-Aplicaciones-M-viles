@@ -14,8 +14,7 @@
 
 ## Funcionalidades de usuario
 
-StepByStep le permitirá al usuario consultar e interactuar con Podcasts de distintos tópicos a través
-de una interfaz amigable. El usuario podrá:
+StepByStep le permitirá al usuario :
 
 1. Búsqueda Avanzada: Los usuarios podrán buscar recetas utilizando filtros como ingredientes,
    tipo de comida, tiempo de preparacion, etc.
