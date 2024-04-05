@@ -7,6 +7,10 @@ android {
     namespace = "com.example.stepbystep"
     compileSdk = 34
 
+    buildFeatures{
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.stepbystep"
         minSdk = 29
