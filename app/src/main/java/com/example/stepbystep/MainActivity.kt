@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         // utilizamos el binding para que al seleccionar la opcion log in sign nos envie a la actividad de esta
 
         binding.loginButton.setOnClickListener {
-            val i = Intent(this, HomeActivity::class.java)
+            val i = Intent(this, FragmentActivity::class.java)
             startActivity(i)
         }
 
