@@ -1,12 +1,15 @@
 package com.example.stepbystep.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.stepbystep.DailyFoodsAdapter
+import com.example.stepbystep.FoodsMenuActivity
+import com.example.stepbystep.R
 import com.example.stepbystep.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -28,10 +31,20 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        val dailyFoodsName = arrayListOf<String>("Breakfast", "Dinner", "Desserts")
+
+        val adapter = DailyFoodsAdapter(requireActivity(), R.layout.activity_list_daily_food, dailyFoodsName)
+
+        binding.ListsFoods.adapter = adapter
+
+
+        binding.ListsFoods.setOnItemClickListener { parent, view, position, id ->
+
+
+            val i = Intent(requireActivity(), FoodsMenuActivity::class.java)
+            startActivity(i)
         }
+
         return root
     }
 
