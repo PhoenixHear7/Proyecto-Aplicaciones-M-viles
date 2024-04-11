@@ -22,11 +22,10 @@ class FragmentActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_activity_fragment)
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
+                R.id.navigation_home, R.id.navigation_profile
             )
         )
 
-        // Configura el BottomNavigationView con el NavController
         navView.setupWithNavController(navController)
     }
 }
