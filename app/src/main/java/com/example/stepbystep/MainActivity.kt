@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         // utilizamos el binding para que al seleccionar al opcion sign nos envie a la actividad de esta
          binding.singupButton.setOnClickListener {
-             val i = Intent(this, RegisterActivity::class.java)
+             val i = Intent(this, FoodsMenuActivity::class.java)
              startActivity(i)
          }
         // utilizamos el binding para que al seleccionar la opcion log in sign nos envie a la actividad de esta
