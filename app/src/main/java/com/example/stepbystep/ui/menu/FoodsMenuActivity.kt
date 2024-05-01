@@ -1,6 +1,5 @@
 package com.example.stepbystep.ui.menu
 
-
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,8 +8,6 @@ import com.example.stepbystep.RecipeInformationActivity
 import com.example.stepbystep.databinding.ActivityFoodsMenuBinding
 import androidx.lifecycle.ViewModelProvider
 import com.example.stepbystep.FoodsMenuAdapter
-
-
 
 class FoodsMenuActivity : AppCompatActivity() {
 
@@ -27,9 +24,41 @@ class FoodsMenuActivity : AppCompatActivity() {
         // Inicializar el ViewModel
         viewModel = ViewModelProvider(this).get(FoodsMenuViewModel::class.java)
 
+        // Enlazar ViewModel con el layout
+        binding.viewModel = viewModel
+
+        // Obtener el nombre de la comida seleccionada
+        val dailyFoodName = intent.getStringExtra("DAILY_FOOD_NAME")
+        binding.dailyFoodsName.text = dailyFoodName
+
+        var query = ""
+
+        if(binding.dailyFoodsName.text == "Breakfast"){
+
+            query = "Breakfast"
+
+        } else if(binding.dailyFoodsName.text == "Dinner") {
+
+            query = "Dinner"
+
+        } else {
+            query = "Desserts"
+
+        }
+
+        // Llamar al método para cargar la lista de recetas con el valor de la daily food
+        viewModel.showListRecipe(query)
+
+        // Inicializar el adaptador con una lista vacía
+        adapter = FoodsMenuAdapter(this, R.layout.activity_foodsmenu_list, ArrayList())
+        binding.listfood.adapter = adapter
+
+        // Observar los cambios en la lista de recetas y actualizar el adaptador
+        viewModel.recipeResults.observe(this) { recipeResults ->
+            // Extraer la lista de recetas del MutableLiveData y pasarla al adaptador
+            adapter.updateRecipes(recipeResults)
+        }
+
 
     }
 }
-
-
-
