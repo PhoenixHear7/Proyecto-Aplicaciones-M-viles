@@ -1,22 +1,25 @@
 package com.example.stepbystep.ui.menu
 
+
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+
+import kotlinx.coroutines.launch
 
 class FoodsMenuViewModel : ViewModel() {
 
-    val foodsMenu: MutableLiveData<List<String>> = MutableLiveData()
+    // LiveData para la lista de resultados de recetas
 
-    init {
-        // Inicializa foodsMenu con una lista vacía
-        foodsMenu.value = emptyList()
-    }
 
-    fun showRecipe(position: Int) {
-        foodsMenu.value = when (position) {
-            1 -> listOf("Wilmer", "es", "mka")
-            2 -> listOf("lo", "van", "a", "Expulsar")
-            else -> listOf("Leche_Asada", "Tarta", "CheeseCake", "Browine")
+    // Método para obtener la lista de resultados de recetas
+    fun showListRecipe(query: String) {
+        viewModelScope.launch {
+
+
+
+
         }
     }
 }
+

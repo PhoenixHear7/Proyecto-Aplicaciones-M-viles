@@ -2,8 +2,8 @@
 <layout>
     <data>
         <variable
-            name="viewmodel"
-            type="com.example.stepbystep.ui.menu.FoodsMenuViewModel" />
+            name="viewModel"
+            type="com.example.stepbystep.ui.menu.FoodsMenuActivity" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
