@@ -18,8 +18,9 @@
         <activity
             android:name=".activity_list_foodsmenu"
             android:exported="false" />
+
         <activity
-            android:name=".FoodsMenuActivity"
+            android:name=".ui.menu.FoodsMenuActivity"
             android:exported="false" />
         <activity
             android:name=".FragmentActivity"
