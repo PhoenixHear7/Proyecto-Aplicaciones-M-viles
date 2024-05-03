@@ -58,7 +58,17 @@ class FoodsMenuActivity : AppCompatActivity() {
             // Extraer la lista de recetas del MutableLiveData y pasarla al adaptador
             adapter.updateRecipes(recipeResults)
         }
+     binding.listfood.setOnItemClickListener { parent, view, position, id ->
+         viewModel.getidRecipe(position)
+
+     }
+        viewModel.idRecipe.observe(this){ idRecipe ->
+
+            val i = Intent(this, RecipeInformationActivity:: class.java )
+            i.putExtra("ID_RECIPE",idRecipe)
+            startActivity(i)
 
 
+        }
     }
 }

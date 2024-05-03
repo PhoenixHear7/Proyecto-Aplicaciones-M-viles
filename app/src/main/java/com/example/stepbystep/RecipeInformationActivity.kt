@@ -2,23 +2,25 @@ package com.example.stepbystep
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.ViewModelProvider
 import com.example.stepbystep.databinding.ActivityRecipeInformationBinding
+import com.example.stepbystep.ui.menu.FoodsMenuViewModel
 
 class RecipeInformationActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRecipeInformationBinding
+
+    private lateinit var viewModel: RecipeInformationViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRecipeInformationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val recipeName = intent.getStringExtra("RECIPE_INFORMATION")
-        val  image =  intent.getStringExtra("RECIPE_IMAGE")
-        val recipeImage = resources.getIdentifier(image, "drawable", packageName)
+        viewModel = ViewModelProvider(this).get(RecipeInformationViewModel::class.java)
+        binding.viewModel = viewModel
 
-        binding.recipeImage.setImageResource(recipeImage)
+        val recipeid = intent.getIntExtra("ID_RECIPE", 0)
 
-        binding.recipeName.text = recipeName
     }
 }
