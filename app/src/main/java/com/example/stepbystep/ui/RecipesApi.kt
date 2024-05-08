@@ -1,9 +1,11 @@
 package com.example.stepbystep.ui
 
+import RecipeInformation
 import RecipesResponse
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 
@@ -14,6 +16,13 @@ interface RecipesApi {
         @Query("number") number: Int,
         @Query("apiKey") apiKey: String
     ): RecipesResponse
+
+    @GET("recipes/{idRecipe}/information?")
+    suspend fun showDescripcion(
+        @Path("idRecipe") idRecipe: Int,
+        @Query("apiKey") apiKey: String
+
+    ): RecipeInformation
 
     companion object {
         private const val BASE_URL = "https://api.spoonacular.com/"
