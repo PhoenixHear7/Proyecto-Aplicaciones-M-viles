@@ -11,10 +11,11 @@ import retrofit2.http.Query
 
 interface RecipesApi {
     @GET("recipes/complexSearch")
-    suspend fun showImageRecipe(
+    suspend fun showListRecipe(
         @Query("query") query: String,
         @Query("number") number: Int,
-        @Query("apiKey") apiKey: String
+        @Query("apiKey") apiKey: String,
+        @Query("addRecipeInformation") addRecipeInformation: Boolean = true
     ): RecipesResponse
 
     @GET("recipes/{idRecipe}/information?")

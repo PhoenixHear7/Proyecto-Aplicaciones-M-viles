@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="viewModel"
             type="com.example.stepbystep.RecipeInformationViewModel" />
     </data>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RecipeInformationActivity"
@@ -18,7 +18,7 @@
         android:id="@+id/recipeName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Brownie"
+        android:text=""
         android:textSize="40sp"
         android:gravity="center"
         android:padding="20dp"
@@ -38,7 +38,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/recipeName"
-        app:srcCompat="@drawable/browine" />
+        app:layout_constraintBottom_toTopOf="@+id/linearlayoutIngredients"
+         />
 
     <LinearLayout
         android:id="@+id/linearlayoutIngredients"
@@ -48,6 +49,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/StepsTitle"
         android:background="@color/blue"
         >
 
@@ -64,26 +66,9 @@
 
         </TextView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
 
-            >
 
-            <TextView
-                android:id="@+id/numberIngredient"
-                android:layout_width="30dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/search_button_style"
-                android:text="1"
-                android:textColor="@color/black"
-                android:gravity="center"
-                android:textSize="20dp">
 
-            </TextView>
 
             <TextView
                 android:id="@+id/TEXTIngredient"
@@ -91,15 +76,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="Ingredients"
                 android:textColor="@color/white"
                 android:textSize="20dp">
 
             </TextView>
 
 
-
-        </LinearLayout>
 
 
     </LinearLayout>
@@ -114,19 +96,31 @@
         android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearlayoutIngredients"
-        app:layout_constraintBottom_toTopOf="@+id/instructions"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
         android:fontFamily="@font/aileron_bold"/>
 
-    <TextView
-        android:id="@+id/instructions"
-        android:layout_width="358dp"
-        android:layout_height="197dp"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="402dp"
+        android:layout_height="90dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/StepsTitle"
-        android:fontFamily="sans-serif"/>
+        app:layout_constraintTop_toBottomOf="@id/StepsTitle">
+
+        <TextView
+            android:id="@+id/instructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text=""
+            android:textSize="20sp" />
+    </ScrollView>
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

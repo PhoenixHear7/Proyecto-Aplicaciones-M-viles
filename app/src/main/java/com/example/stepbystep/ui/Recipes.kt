@@ -5,8 +5,10 @@ class RecipeResult(
     val id: Int,
     val title: String,
     val image: String,
-    val imageType: String
-)
+    val summary: String,
+
+
+    )
 
 class RecipesResponse(
     val results: List<RecipeResult>,

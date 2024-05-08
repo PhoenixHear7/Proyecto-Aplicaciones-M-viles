@@ -6,35 +6,33 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.stepbystep.ui.RecipesApi
 import kotlinx.coroutines.launch
-import java.text.FieldPosition
 
 class FoodsMenuViewModel : ViewModel() {
 
     // LiveData para la lista de resultados de recetas
     val recipeResults: MutableLiveData<List<RecipeResult>> = MutableLiveData()
     val idRecipe: MutableLiveData<Int> = MutableLiveData()
-    fun getidRecipe(position: Int){
-        val listResult = recipeResults.value
+    val recipesDescrion: MutableLiveData<List<RecipeResult>> = MutableLiveData()
 
-        //  Verifica que las lista no sea nula, y que la posicion
-        //  recibida sea igual al inidice de la lista
-        if (listResult != null && position in listResult.indices) {
-            val id = listResult[position].id
-            idRecipe.value = id
-        }
-
-    }
     // Método para obtener la lista de resultados de recetas
     fun showListRecipe(query: String) {
         viewModelScope.launch {
-
             // Obtener la lista de resultados de recetas
-            val response = RecipesApi.getInstace().showImageRecipe(query, 50, "7013fa1308644502a9f0851a2b9dfb47")
+            val response = RecipesApi.getInstace().showListRecipe(query, 50, "7013fa1308644502a9f0851a2b9dfb47", addRecipeInformation = true)
             // Asignar los resultados al LiveData
             recipeResults.value = response.results
 
 
         }
     }
+
+    fun getIdRecipe(position: Int) {
+        val results = recipeResults.value
+        if (results != null && position in results.indices) {
+            val id = results[position].id
+            idRecipe.value = id
+        }
+    }
+
 
 }

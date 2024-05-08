@@ -59,7 +59,7 @@ class FoodsMenuActivity : AppCompatActivity() {
             adapter.updateRecipes(recipeResults)
         }
      binding.listfood.setOnItemClickListener { parent, view, position, id ->
-         viewModel.getidRecipe(position)
+         viewModel.getIdRecipe(position)
 
      }
         viewModel.idRecipe.observe(this){ idRecipe ->

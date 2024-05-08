@@ -2,6 +2,7 @@ package com.example.stepbystep
 
 import RecipeResult
 import android.app.Activity
+import android.app.appsearch.GetByDocumentIdRequest
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
@@ -16,10 +17,14 @@ class FoodsMenuAdapter(val context: Activity, val layout: Int, val data: ArrayLi
         val view = context.layoutInflater.inflate(layout, null)
         val name = view.findViewById<TextView>(R.id.foodsname)
         val img = view.findViewById<ImageView>(R.id.foodsimage)
+        val description = view.findViewById<TextView>(R.id.descripcion)
 
         val recipe = data[position]
         name.text = recipe.title
+
         showImage(recipe.image, img)
+
+        description.text = recipe.summary
 
         return view
     }
@@ -32,13 +37,16 @@ class FoodsMenuAdapter(val context: Activity, val layout: Int, val data: ArrayLi
     }
 
     fun showImage(url: String, imageView: ImageView) {
-            Picasso.get()
-                .load(url)
-                .into(imageView)
+        Picasso.get()
+            .load(url)
+            .into(imageView)
 
     }
 
 
 
-}
 
+
+
+
+}

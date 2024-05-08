@@ -14,17 +14,22 @@ class RecipeInformationViewModel: ViewModel()  {
 
     val url: MutableLiveData<String> = MutableLiveData()
     val instructions: MutableLiveData<String> = MutableLiveData()
+    val ingredients:MutableLiveData<List<String>> = MutableLiveData()
 
     fun recipeInfo(id:Int){
 
         viewModelScope.launch {
 
 
-            val response = RecipesApi.getInstace().showDescripcion(id, "2b0ba9cc4e7444eda6e58adecb9caf84")
+            val response = RecipesApi.getInstace().showDescripcion(id, "7013fa1308644502a9f0851a2b9dfb47")
 
             name.value = response.title
             url.value = response.image
             instructions.value = response.instructions
+            val separatedInstructions = response.instructions.split("</li><li>")
+            instructions.value = separatedInstructions.toString()
+            val ingredientNames = response.extendedIngredients.map { it.name }
+            ingredients.value = ingredientNames
         }
 
     }
