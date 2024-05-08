@@ -26,7 +26,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/recipeImage"
         android:background="@color/blue"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:fontFamily="@font/aileron_bold"/>
 
 
     <ImageView
@@ -47,7 +48,8 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/blue">
+        android:background="@color/blue"
+        >
 
         <TextView
             android:id="@+id/textIngredients"
@@ -57,7 +59,8 @@
             android:text="Ingredients"
             android:textSize="30dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/aileron_bold">
 
         </TextView>
 
@@ -110,17 +113,20 @@
         android:text="Steps"
         android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearlayoutIngredients" />
+        app:layout_constraintTop_toBottomOf="@+id/linearlayoutIngredients"
+        app:layout_constraintBottom_toTopOf="@+id/instructions"
+        android:fontFamily="@font/aileron_bold"/>
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/instructions"
         android:layout_width="358dp"
         android:layout_height="197dp"
         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/StepsTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/StepsTitle"
+        android:fontFamily="sans-serif"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

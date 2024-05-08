@@ -46,7 +46,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imagefood"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.499" />
+            app:layout_constraintVertical_bias="0.499"
+            android:fontFamily="@font/aileron_bold"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

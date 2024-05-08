@@ -29,7 +29,7 @@ class FoodsMenuViewModel : ViewModel() {
         viewModelScope.launch {
 
             // Obtener la lista de resultados de recetas
-            val response = RecipesApi.getInstace().showImageRecipe(query, 50, "2b0ba9cc4e7444eda6e58adecb9caf84")
+            val response = RecipesApi.getInstace().showImageRecipe(query, 50, "7013fa1308644502a9f0851a2b9dfb47")
             // Asignar los resultados al LiveData
             recipeResults.value = response.results
 

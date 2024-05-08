@@ -26,7 +26,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/dailyFoodsName"
             android:background="@color/blue"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:fontFamily="@font/aileron_bold"/>
 
         <TextView
             android:id="@+id/dailyFoodsName"
@@ -38,6 +39,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/NameApp"
             app:layout_constraintBottom_toTopOf="@+id/listfood"
+            android:fontFamily="@font/aileron_bold"
 
             />
 

@@ -28,7 +28,8 @@
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/libro_de_recetas" />
+        app:srcCompat="@drawable/libro_de_recetas"
+        />
 
     <TextView
         android:id="@+id/nameapplication"
@@ -41,7 +42,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo" />
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        android:fontFamily="@font/aileron_bold"/>
 
     <TextView
         android:id="@+id/loginText"
@@ -53,7 +55,8 @@
         app:layout_constraintBottom_toTopOf="@+id/sign_in_to_continue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameapplication" />
+        app:layout_constraintTop_toBottomOf="@+id/nameapplication"
+        android:fontFamily="@font/aileron_bold"/>
 
     <TextView
         android:id="@+id/sign_in_to_continue"
@@ -114,7 +117,8 @@
         app:layout_constraintBottom_toTopOf="@+id/forgot_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@id/editTextTextPassword"
+        android:fontFamily="@font/aileron_bold"/>
 
     <Button
         android:id="@+id/forgot_password"

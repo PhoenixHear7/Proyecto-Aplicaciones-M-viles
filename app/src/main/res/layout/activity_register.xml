@@ -26,13 +26,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="StepByStep"
-        android:textColor="#EFE6E6"
+        android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:fontFamily="@font/aileron_bold"/>
 
     <TextView
         android:id="@+id/createnewaccount"
@@ -45,20 +46,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo" />
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        android:fontFamily="@font/aileron_bold"/>
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="wrap_content"
+        android:layout_width="317dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:layout_marginTop="20dp"
-        android:ems="10"
-        android:padding="16dp"
-        android:gravity="center"
         android:background="@drawable/edit_text_style"
+        android:ems="10"
+        android:gravity="center"
         android:hint="Ingrese su nombre"
         android:inputType="text"
+        android:padding="16dp"
         app:layout_constraintBottom_toTopOf="@+id/email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -67,14 +69,14 @@
 
     <EditText
         android:id="@+id/email"
-        android:layout_width="wrap_content"
+        android:layout_width="317dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:background="@drawable/edit_text_style"
         android:ems="10"
         android:gravity="center"
         android:hint="Email"
         android:inputType="text"
-        android:background="@drawable/edit_text_style"
         android:padding="16dp"
         app:layout_constraintBottom_toTopOf="@+id/pasword"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,7 +86,7 @@
 
     <EditText
         android:id="@+id/pasword"
-        android:layout_width="wrap_content"
+        android:layout_width="317dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
@@ -100,7 +102,7 @@
 
     <EditText
         android:id="@+id/confirmpasword"
-        android:layout_width="wrap_content"
+        android:layout_width="317dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
@@ -130,7 +132,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/confirmpasword"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:fontFamily="@font/aileron_bold"/>
 
     <TextView
         android:id="@+id/nameaplication2"
@@ -142,5 +145,6 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/aileron_bold"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
