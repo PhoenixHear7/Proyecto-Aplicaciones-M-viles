@@ -21,7 +21,7 @@ class RecipeInformationViewModel: ViewModel()  {
         viewModelScope.launch {
 
 
-            val response = RecipesApi.getInstace().showDescripcion(id, "7013fa1308644502a9f0851a2b9dfb47")
+            val response = RecipesApi.getInstace().showDescripcion(id, "51bcdba4a84d4bf9ad9caed2512dbb39")
 
             name.value = response.title
             url.value = response.image
