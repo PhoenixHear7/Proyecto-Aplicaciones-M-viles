@@ -31,20 +31,9 @@ class FoodsMenuActivity : AppCompatActivity() {
         val dailyFoodName = intent.getStringExtra("DAILY_FOOD_NAME")
         binding.dailyFoodsName.text = dailyFoodName
 
-        var query = ""
+        val query = binding.dailyFoodsName.text.toString()
 
-        if(binding.dailyFoodsName.text == "Breakfast"){
 
-            query = "Breakfast"
-
-        } else if(binding.dailyFoodsName.text == "Dinner") {
-
-            query = "Dinner"
-
-        } else {
-            query = "Desserts"
-
-        }
 
         // Llamar al método para cargar la lista de recetas con el valor de la daily food
         viewModel.showListRecipe(query)

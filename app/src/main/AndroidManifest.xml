@@ -28,7 +28,8 @@
         <activity
             android:name=".FragmentActivity"
             android:exported="false"
-            android:label="@string/title_activity_fragment" />
+            android:label="@string/title_activity_fragment"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".ForgotPasswordActivity"
             android:exported="false" />

@@ -32,6 +32,16 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        binding.searchEditText.setOnClickListener {
+            val search = binding.searchEditText.text.toString()
+                 if (search.isNotEmpty()) {
+                     val i = Intent(requireActivity(), FoodsMenuActivity::class.java)
+                     i.putExtra("DAILY_FOOD_NAME", search.capitalize())
+                     startActivity(i)
+                }
+            }
+
+
         showListFood()
 
         return root
