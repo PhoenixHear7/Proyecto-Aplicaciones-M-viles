@@ -1,16 +1,17 @@
 package com.example.stepbystep
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.GridLayout
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.stepbystep.databinding.ActivityRecipeInformationBinding
-import com.example.stepbystep.ui.menu.FoodsMenuViewModel
 import com.squareup.picasso.Picasso
 
 class RecipeInformationActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRecipeInformationBinding
-
     private lateinit var viewModel: RecipeInformationViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,34 +24,29 @@ class RecipeInformationActivity : AppCompatActivity() {
 
         val recipeId = intent.getIntExtra("ID_RECIPE", 0)
 
-        binding.viewModel = viewModel
-
-        //pasamos el id de la receta seleccionada al viewModel
+        // Pasamos el id de la receta seleccionada al ViewModel
         viewModel.recipeInfo(recipeId)
 
-        //ponemos un observadir para cuando el texto cambie este se refleje en la vista, lo mismo para la url y la instrucciones
-        viewModel.name.observe(this){name ->
+        // Observadores para actualizar la UI
+        viewModel.name.observe(this) { name ->
             binding.recipeName.text = name
         }
 
-        viewModel.url.observe(this){url ->
-            shoeImage(url)
+        viewModel.url.observe(this) { url ->
+            showImage(url)
         }
 
-        viewModel.instructions.observe(this){url ->
-            binding.instructions.text = url
+        viewModel.instructions.observe(this) { instructions ->
+            binding.instructions.text = instructions
         }
 
-        viewModel.ingredients.observe(this){ingredents ->
-            binding.TEXTIngredient.text = ingredents.toString()
-        }
 
+        viewModel.isLoading.observe(this) { isLoading ->
+            binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+        }
     }
 
-
-
-    fun shoeImage(url: String){
-
+    private fun showImage(url: String) {
         Picasso.get()
             .load(url)
             .resize(4000, 2000)

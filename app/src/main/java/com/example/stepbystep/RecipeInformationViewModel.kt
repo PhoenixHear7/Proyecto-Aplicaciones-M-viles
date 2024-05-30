@@ -15,21 +15,28 @@ class RecipeInformationViewModel: ViewModel()  {
     val url: MutableLiveData<String> = MutableLiveData()
     val instructions: MutableLiveData<String> = MutableLiveData()
     val ingredients:MutableLiveData<List<String>> = MutableLiveData()
+    val isLoading: MutableLiveData<Boolean> = MutableLiveData(false)
 
     fun recipeInfo(id:Int){
 
+        isLoading.value = true  // progressBar
+
         viewModelScope.launch {
-
-
-            val response = RecipesApi.getInstace().showDescripcion(id, "51bcdba4a84d4bf9ad9caed2512dbb39")
+            val response = RecipesApi.getInstace().showDescripcion(id, "f3bfa1a60ec44532b3c428ca8f27d706")
 
             name.value = response.title
             url.value = response.image
-            instructions.value = response.instructions
-            val separatedInstructions = response.instructions.split("</li><li>")
-            instructions.value = separatedInstructions.toString()
+
+            val separatedInstructions = response.instructions.split(Regex("</li><li>|<ol><li>|</li></ol>|\\."))
+            val formattedInstructions = separatedInstructions
+                .filter { it.isNotBlank() } // Filtrar las líneas en blanco
+                .joinToString("\n") { "• $it" }
+
+            instructions.value = formattedInstructions
+
             val ingredientNames = response.extendedIngredients.map { it.name }
             ingredients.value = ingredientNames
+            isLoading.value = false  // Ocultar ProgressBar
         }
 
     }
