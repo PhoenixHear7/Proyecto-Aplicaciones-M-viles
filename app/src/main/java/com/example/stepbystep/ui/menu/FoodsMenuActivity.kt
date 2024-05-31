@@ -3,6 +3,7 @@ package com.example.stepbystep.ui.menu
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.example.stepbystep.R
 import com.example.stepbystep.RecipeInformationActivity
 import com.example.stepbystep.databinding.ActivityFoodsMenuBinding
@@ -51,6 +52,15 @@ class FoodsMenuActivity : AppCompatActivity() {
          viewModel.getIdRecipe(position)
 
      }
+
+        viewModel.isLoading.observe(this) { isLoading ->
+            if (isLoading) {
+                binding.progressBar.visibility = View.VISIBLE
+            } else {
+                binding.progressBar.visibility = View.GONE
+            }
+        }
+
         viewModel.idRecipe.observe(this){ idRecipe ->
 
             val i = Intent(this, RecipeInformationActivity:: class.java )
